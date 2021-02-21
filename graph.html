@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <canvas id="myChart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+    <title>graph</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <script>
+        var confirmed;
+        var country;
+        fetch('databas.json')
+            .then(response => response.json())
+            .then(datastar => {
+                    // Do something with your data
+                    datastar.data.forEach(element2 => {
+                                confirmed = element2.confirmed;
+                                country = element2.name;
+
+
+
+                                var ctx = document.getElementById('myChart');
+                                var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: options
+});
+    </script>
+
+</body>
+
+</html>
